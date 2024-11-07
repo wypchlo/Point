@@ -16,6 +16,7 @@ class Point
 
         Point();
         Point(double _x, double _y);
+        Point(Point& point);
 
         Point& operator=(Point &point);
         Point operator-(Point &point);

@@ -5,9 +5,14 @@
 Point::Point() : coordinates(new double[2]{0, 0}), x(coordinates[0]), y(coordinates[1]) {
     CalculateVectorLength();
 };
+
 Point::Point(double _x, double _y) : coordinates(new double[2]{_x, _y}), x(coordinates[0]), y(coordinates[1]) {
     CalculateVectorLength();
 };
+
+Point::Point(Point& point) : coordinates(new double[2]{point.x, point.y}), x(coordinates[0]), y(coordinates[1]) {
+    CalculateVectorLength();
+}
 
 Point& Point::operator=(Point &point) {
     coordinates[0] = point.GetX();
