@@ -1,17 +1,17 @@
 #include "point.hpp"
 
 Point::Point(){};
-Point::Point(float _x, float _y) {
+Point::Point(double _x, double _y) {
     x = _x;
     y = _y;
 }
 
-float Point::GetX() { return x; }
-float Point::GetY() { return y; }
+double Point::GetX() { return x; }
+double Point::GetY() { return y; }
 
-void Point::SetX(float _x) { x = _x; }
-void Point::SetY(float _y) { y = _y; }
-void Point::Set(float _x, float _y) {
+void Point::SetX(double _x) { x = _x; }
+void Point::SetY(double _y) { y = _y; }
+void Point::Set(double _x, double _y) {
     x = _x;
     y = _y;
 }

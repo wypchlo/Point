@@ -1,16 +1,17 @@
 class Point
 {
-    float x, y; //I am unsure as to whether this should be public or not
+    public:
+        double x, y; //I am unsure as to whether this should be public or not
 
-    public: 
         Point();
-        Point(float _x, float _y);
+        Point(double _x, double _y);
 
-        float GetX();
-        float GetY();
+        double GetX();
+        double GetY();
+        double Get();
 
-        void SetX(float _x);
-        void SetY(float _y);
+        void SetX(double _x);
+        void SetY(double _y);
 
-        void Set(float _x, float _y);
+        void Set(double _x, double _y);
 };
