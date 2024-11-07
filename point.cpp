@@ -1,17 +1,21 @@
-#include "point.hpp"
+#include"point.hpp"
 
 Point::Point(){};
 Point::Point(double _x, double _y) {
-    x = _x;
-    y = _y;
+    coordinates = new double[2]{_x, _y};
 }
 
-double Point::GetX() { return x; }
-double Point::GetY() { return y; }
+Point::~Point() {
+    delete[] coordinates;
+}
 
-void Point::SetX(double _x) { x = _x; }
-void Point::SetY(double _y) { y = _y; }
+double Point::GetX() { return coordinates[0]; }
+double Point::GetY() { return coordinates[1]; }
+double* Point::Get() { return coordinates; }
+
+void Point::SetX(double _x) { coordinates[0] = _x; }
+void Point::SetY(double _y) { coordinates[1] = _y; }
 void Point::Set(double _x, double _y) {
-    x = _x;
-    y = _y;
+    coordinates[0] = _x;
+    coordinates[1] = _y;
 }
