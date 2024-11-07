@@ -1,4 +1,5 @@
 #include<ostream>
+#include<istream>
 
 class Point
 {
@@ -12,6 +13,7 @@ class Point
 
         Point& operator=(Point &point);
         friend std::ostream& operator<<(std::ostream& os, Point& point);
+        friend std::istream& operator>>(std::istream& is, Point& point);
 
         double GetX();
         double GetY();

@@ -1,5 +1,6 @@
 #include"point.hpp"
 #include<ostream>
+#include<iostream>
 
 Point::Point() : coordinates(new double[2]{0, 0}), x(coordinates[0]), y(coordinates[1]) {};
 Point::Point(double _x, double _y) : coordinates(new double[2]{_x, _y}), x(coordinates[0]), y(coordinates[1]) {};
@@ -13,6 +14,11 @@ Point& Point::operator=(Point &point) {
 std::ostream& operator<<(std::ostream& os, Point& point) {
     os<<"{x: "<<point.x<<" y: "<<point.y<<'}';
     return os;
+}
+
+std::istream& operator>>(std::istream& is, Point& point) {
+    is>>point.x>>point.y;
+    return is; 
 }
 
 double Point::GetX() { return coordinates[0]; }

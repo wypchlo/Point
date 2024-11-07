@@ -4,9 +4,15 @@
 int main(void) {
     Point p1 = Point(10, 20);
     Point p2 = Point(-10, -10);
+    Point p3; 
+    
+    std::cout<<"Input the x and y coordinates of P3"<<std::endl;
+
+    std::cin>>p3;
 
     std::cout<<"P1: "<<p1<<std::endl;
     std::cout<<"P2: "<<p2<<std::endl;
+    std::cout<<"P3: "<<p3<<std::endl;
     
     double* p1_coordinates = p1.Get();
     
