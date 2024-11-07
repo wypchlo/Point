@@ -18,7 +18,9 @@ class Point
         Point(double _x, double _y);
 
         Point& operator=(Point &point);
-        friend std::ostream& operator<<(std::ostream& os, Point& point);
+        Point operator-(Point &point);
+        Point operator+(Point &point);
+        friend std::ostream& operator<<(std::ostream& os, Point point);
         friend std::istream& operator>>(std::istream& is, Point& point);
 
         double GetX();

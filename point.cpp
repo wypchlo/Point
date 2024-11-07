@@ -10,15 +10,22 @@ Point::Point(double _x, double _y) : coordinates(new double[2]{_x, _y}), x(coord
 };
 
 Point& Point::operator=(Point &point) {
-    delete[] coordinates;
-    coordinates = new double[2]{point.GetX(), point.GetY()};
+    coordinates[0] = point.GetX();
+    coordinates[1] = point.GetY();
     CalculateVectorLength();
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, Point& point) {
-    os<<"{x: "<<point.x<<" y: "<<point.y<<" length: "<<point.length<<'}';
-    return os;
+Point Point::operator-(Point &point) {
+    return Point(x - point.GetX(), y - point.GetY());
+}
+
+Point Point::operator+(Point &point) {
+    return Point(x + point.GetX(), y + point.GetY());
+}
+
+std::ostream& operator<<(std::ostream& os, Point point) {
+    return os<<"{x: "<<point.x<<" y: "<<point.y<<" length: "<<point.length<<'}';
 }
 
 std::istream& operator>>(std::istream& is, Point& point) {
