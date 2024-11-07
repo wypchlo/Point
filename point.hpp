@@ -1,10 +1,16 @@
 #include<ostream>
 #include<istream>
+#include<cmath>
 
 class Point
 {
-    double* coordinates; //I am unsure as to whether this should be public or not
-    double &x, &y;
+    private: 
+
+        double* coordinates;
+        double &x, &y;
+        double length;
+
+        inline void CalculateVectorLength(){ length = std::sqrt(x*x + y*y); };
 
     public:
 
