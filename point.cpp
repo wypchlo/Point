@@ -1,12 +1,18 @@
 #include"point.hpp"
+#include<ostream>
 
-Point::Point(){};
-Point::Point(double _x, double _y) {
-    coordinates = new double[2]{_x, _y};
+Point::Point() : coordinates(new double[2]{0, 0}), x(coordinates[0]), y(coordinates[1]) {};
+Point::Point(double _x, double _y) : coordinates(new double[2]{_x, _y}), x(coordinates[0]), y(coordinates[1]) {};
+
+Point& Point::operator=(Point &point) {
+    delete[] coordinates;
+    coordinates = new double[2]{point.GetX(), point.GetY()};
+    return *this;
 }
 
-Point::~Point() {
-    delete[] coordinates;
+std::ostream& operator<<(std::ostream& os, Point& point) {
+    os<<"{x: "<<point.x<<" y: "<<point.y<<'}';
+    return os;
 }
 
 double Point::GetX() { return coordinates[0]; }
@@ -18,4 +24,8 @@ void Point::SetY(double _y) { coordinates[1] = _y; }
 void Point::Set(double _x, double _y) {
     coordinates[0] = _x;
     coordinates[1] = _y;
+}
+
+Point::~Point() {
+    delete[] coordinates;
 }

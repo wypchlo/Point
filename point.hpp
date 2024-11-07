@@ -1,11 +1,17 @@
+#include<ostream>
+
 class Point
 {
     double* coordinates; //I am unsure as to whether this should be public or not
+    double &x, &y;
 
     public:
 
         Point();
         Point(double _x, double _y);
+
+        Point& operator=(Point &point);
+        friend std::ostream& operator<<(std::ostream& os, Point& point);
 
         double GetX();
         double GetY();
