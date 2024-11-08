@@ -21,12 +21,16 @@ Point& Point::operator=(Point &point) {
     return *this;
 }
 
-Point Point::operator-(Point &point) {
+Point Point::operator-(Point point) {
     return Point(x - point.GetX(), y - point.GetY());
 }
 
-Point Point::operator+(Point &point) {
+Point Point::operator+(Point point) {
     return Point(x + point.GetX(), y + point.GetY());
+}
+
+double Point::operator*(Point point) {
+    return x*y + point.x*point.y;
 }
 
 std::ostream& operator<<(std::ostream& os, Point point) {

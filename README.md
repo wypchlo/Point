@@ -8,7 +8,7 @@ Goals: <br/><br/>
 [DONE] Make the stream operator work properly (<< and >>) <br/>
 [DONE] Add an option to calculate the vector length in the point library <br/>
 [DONE] Add an option to add and subtract two vectors from each other <br/>
-Add a vector product function accessed by the * operator <br/>
+[DONE] Add a vector product function accessed by the * operator <br/>
 
 Notes:
 
